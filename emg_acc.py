@@ -73,13 +73,6 @@ def transferFunction(ADC, n = 10, VCC = 3.3, Gemg = 1009):
         result = np.append(result, ((((data/math.pow(2, n))-(1/2))*VCC)/Gemg)*1000)
     return result
 
-def rmsEMG(timeSeconds, emg):
-    sumSquared=0
-    for signal in emg:
-        sumSquared+= math.pow(signal, 2)
-    result = math.sqrt(sumSquared/timeSeconds)
-    return result
-
 def rmsValue(array):
     n = len(array)
     squre = 0.0
